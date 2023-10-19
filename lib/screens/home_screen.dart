@@ -15,8 +15,8 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
 
-  List<Question> _questions = [
-    Question(
+  List<Question> _questions = [ // Criando a Lista de Questoes
+    Question( // Objeto Question e adicionando os valores ao objeto criado
       id: '1', 
       title: 'This sign means that you:', 
       options: {
@@ -45,9 +45,10 @@ class _HomeScreenState extends State<HomeScreen> {
     ,)
   ];
 
-  int index = 0;
+  int index = 0; // Variavel responsavel por armazenar o valor do index das questoes
 
-  int score = 0;
+  int score = 0; // Variavel responsavel por armazenar o score
+
   bool isPressed = false;
   bool isAlreadySelected = false;
 
@@ -102,10 +103,10 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      backgroundColor: background,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Quiz App'),
-        backgroundColor: background,
+        backgroundColor: Colors.white,
         shadowColor: Colors.transparent,
         actions: [
           Padding(
