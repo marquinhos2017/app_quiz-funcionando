@@ -11,17 +11,35 @@ class OptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+
+      
+
+      
       color: color,
-      child: ListTile(
-        title:  Text(
-          option,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 14.0,
-            color: color.red != color.green ? neutral : Colors.black,
+      child: Container(
+        
+        height: 70,
+
+        child: Center(
+          child: ListTile(
+
+          
+            title:  Text(
+              option,
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 14.0,
+                fontFamily: 'Montserrat',
+                fontStyle: FontStyle.normal, 
+                fontWeight: FontWeight.w400,
+                color: color.red != color.green ? neutral : Colors.black,
+              ),
+            ),
           ),
-        ),
+        )
       ),
+      
+      
     );
   }
 }

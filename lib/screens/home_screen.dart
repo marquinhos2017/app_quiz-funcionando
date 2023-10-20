@@ -52,6 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
   bool isPressed = false;
   bool isAlreadySelected = false;
 
+  bool acertou = false;
+
   void nextQuestion(){
     if(index == _questions.length - 1){
 
@@ -85,6 +87,8 @@ class _HomeScreenState extends State<HomeScreen> {
     }else{
       if(value == true){
         score++;
+        print('acertou');
+     
         setState(() {
           isPressed = true;
           isAlreadySelected = true;
@@ -106,18 +110,33 @@ class _HomeScreenState extends State<HomeScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Quiz App'),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         shadowColor: Colors.transparent,
+
+        
+
         actions: [
           Padding(
-            padding: const EdgeInsets.all(10.0), 
-            child: Text(
-              'Score: $score', style: const TextStyle(fontSize: 18.0),),)
+            padding: EdgeInsets.symmetric(horizontal: 20), 
+            child: Center(child: Text(
+              'Score: $score', 
+              style: const TextStyle(
+                color: Colors.white, 
+                fontSize: 18.0,
+                //fontSize: 20.0,
+                fontFamily: 'Montserrat',
+                fontStyle: FontStyle.normal, 
+                //color: Colors.black,
+                fontWeight: FontWeight.w700,
+
+              ),
+            ))
+          ,)
         ],
       ),
       body:Container(
         width: double.infinity,
-        padding: const EdgeInsets.symmetric(horizontal: 10.0),
+        padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 20),
         child: Column(
           children: [
             QuestionWidget(
@@ -133,7 +152,13 @@ class _HomeScreenState extends State<HomeScreen> {
                   onTap: () => checkAnswerAndUpdate(_questions[index].options.values.toList()[i]),
                   child: OptionCard(
                     option: _questions[index].options.keys.toList()[i],
-                    color: isPressed ?_questions[index].options.values.toList()[i] == true ? correct : incorrect : neutral,
+                    color: 
+                    
+                      isPressed ?  //Clicou em algum item ?
+                        _questions[index].options.values.toList()[i]  == true  // Valor da resposta e correta ?
+                        ? correct // Cor Verde
+                         : incorrect  // COr Vermelha
+                      : neutral, // Caso nao clicou, a cor sera branca
 
                 ))],
         ),

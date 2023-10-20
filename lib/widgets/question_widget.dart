@@ -2,6 +2,7 @@
 import 'package:app_quiz/constants.dart';
 import 'package:flutter/material.dart';
 
+// widget: Question(index,question)
 class QuestionWidget extends StatelessWidget {
   const QuestionWidget(
     {Key? key, 
@@ -22,9 +23,13 @@ class QuestionWidget extends StatelessWidget {
       child: Text(
         'Pergunta ${indexAction + 1}/$totalQuestions: $question', 
         style: const TextStyle(
-          fontSize: 24.0, 
+          fontSize: 20.0,
+          fontFamily: 'Montserrat',
+          fontStyle: FontStyle.normal, 
           color: Colors.black,
-          fontWeight: FontWeight.bold)),
+          fontWeight: FontWeight.w700,
+          
+          )),
       
         
         
