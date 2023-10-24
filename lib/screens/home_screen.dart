@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
       });
     }else{
       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-        content: const Text('Please select any option'), 
+        content:  Text('Please select any option'), 
         behavior: SnackBarBehavior.floating,
         margin: EdgeInsets.symmetric(vertical: 20.0),
         ));
@@ -71,7 +71,7 @@ class _HomeScreenState extends State<HomeScreen> {
     }else{
       if(value == true){
         score++;
-        print('acertou');
+        //print('acertou');
      
         setState(() {
           isPressed = true;
@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
         });
       }else{
         setState(() {
-           print('errou');
+           //('errou');
           isPressed = true;
           isAlreadySelected = true;
         });
@@ -110,7 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
           
                 actions: [
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20), 
+                    padding: const EdgeInsets.symmetric(horizontal: 20), 
                     child: Center(child: Text(
                       'Score: $score', 
                       style: const TextStyle(
@@ -164,8 +164,8 @@ class _HomeScreenState extends State<HomeScreen> {
               
               floatingActionButton: GestureDetector(
                 onTap: () => nextQuestion(extractedData.length),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                child: const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 10.0),
                   child: NextButton(
                   ),
                 ),

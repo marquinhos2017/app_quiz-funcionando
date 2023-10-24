@@ -12,7 +12,7 @@ class OptionCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: color,
-      child: Container(
+      child: SizedBox(
         
         height: 70,
 

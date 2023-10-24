@@ -1,5 +1,5 @@
 
-import 'package:app_quiz/constants.dart';
+
 import 'package:flutter/material.dart';
 
 // widget: Question(index,question)

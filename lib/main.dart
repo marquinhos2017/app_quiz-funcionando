@@ -1,5 +1,4 @@
 import 'package:app_quiz/models/db_connect.dart';
-import 'package:app_quiz/models/question_model.dart';
 import 'package:app_quiz/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
