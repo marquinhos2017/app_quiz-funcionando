@@ -16,8 +16,8 @@ class DBconnect{
     
   }
 
-  Future<void> fetchQuestios() async{
-    http.get(url).then((response){
+  Future<List<Question>> fetchQuestios() async{
+    return http.get(url).then((response){
       var data = json.decode(response.body) as Map<String,dynamic>;
       List<Question> newQuestions = [];
       data.forEach((key, value){
@@ -29,7 +29,7 @@ class DBconnect{
           );
           newQuestions.add(newQuestion);
       });
-      print(newQuestions);
+      return newQuestions;
       });
       
       }
