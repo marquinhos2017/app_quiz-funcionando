@@ -12,7 +12,7 @@ class NextButton extends StatelessWidget {
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: neutral,
+          color: Colors.black,
           
           
           borderRadius: BorderRadius.circular(10.0),
@@ -31,6 +31,7 @@ class NextButton extends StatelessWidget {
         child: const Text(
           'Next Question',
           textAlign: TextAlign.center,
+           style: TextStyle(color: Colors.white),
         ),
       ),
     );

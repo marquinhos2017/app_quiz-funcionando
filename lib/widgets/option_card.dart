@@ -11,10 +11,6 @@ class OptionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-
-      
-
-      
       color: color,
       child: Container(
         

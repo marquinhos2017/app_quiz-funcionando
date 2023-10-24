@@ -95,6 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
         });
       }else{
         setState(() {
+           print('errou');
           isPressed = true;
           isAlreadySelected = true;
         });
@@ -130,7 +131,8 @@ class _HomeScreenState extends State<HomeScreen> {
                 fontWeight: FontWeight.w700,
 
               ),
-            ))
+            )
+            )
           ,)
         ],
       ),
@@ -143,24 +145,27 @@ class _HomeScreenState extends State<HomeScreen> {
               indexAction: index,
               question: _questions[index].title,
               totalQuestions: _questions.length,
-              ),
-              const Divider(color: neutral,),
-              const SizedBox(height: 25.0),
-              for(int i=0;i<_questions[index].options.length;i++)
+            ),
+            const Divider(color: neutral,),
+            const SizedBox(height: 25.0),
+            for(int i=0;i<_questions[index].options.length;i++)
 
-                GestureDetector(
-                  onTap: () => checkAnswerAndUpdate(_questions[index].options.values.toList()[i]),
-                  child: OptionCard(
-                    option: _questions[index].options.keys.toList()[i],
-                    color: 
-                    
-                      isPressed ?  //Clicou em algum item ?
-                        _questions[index].options.values.toList()[i]  == true  // Valor da resposta e correta ?
-                        ? correct // Cor Verde
-                         : incorrect  // COr Vermelha
-                      : neutral, // Caso nao clicou, a cor sera branca
+              GestureDetector(
+                onTap: () => checkAnswerAndUpdate(_questions[index].options.values.toList()[i]),
+                child: OptionCard(
+                  option: _questions[index].options.keys.toList()[i],
+                  color: 
+                  
+                    isPressed ?  //Clicou em algum item ?
+                      _questions[index].options.values.toList()[i]  == true  // Valor da resposta e correta ?
+                      ? correct // Cor Verde
+                        : incorrect  // COr Vermelha
+                    : neutral, // Caso nao clicou, a cor sera branca
 
-                ))],
+                )
+              )
+              
+          ],
         ),
       ),
 
