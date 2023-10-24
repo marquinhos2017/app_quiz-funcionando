@@ -5,12 +5,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   var db = DBconnect();
-  db.addQuestion(Question(id: '10', title: 'What is 20x100 ?', options: {
-    '100': false,
-    '200' : true,
-    '600': false,
-    '300' : false,
-  }));
+  db.fetchQuestios();
   runApp(
     const MyApp());
 }

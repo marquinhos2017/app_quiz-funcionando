@@ -15,4 +15,13 @@ class DBconnect{
     );
     
   }
+
+  Future<void> fetchQuestios() async{
+    http.get(url).then((response){
+      var data = json.decode(response.body);
+      print(data);
+    });
+    
+    
+  }
 }
