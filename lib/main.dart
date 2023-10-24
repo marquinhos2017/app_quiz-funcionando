@@ -1,7 +1,16 @@
+import 'package:app_quiz/models/db_connect.dart';
+import 'package:app_quiz/models/question_model.dart';
 import 'package:app_quiz/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
+  var db = DBconnect();
+  db.addQuestion(Question(id: '10', title: 'What is 20x100 ?', options: {
+    '100': false,
+    '200' : true,
+    '600': false,
+    '300' : false,
+  }));
   runApp(
     const MyApp());
 }
